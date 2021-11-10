@@ -18,20 +18,42 @@ slack_event_adapter = SlackEventAdapter(
 client = slack.WebClient(token=os.environ['SLACK_TOKEN'])
 bot_id = client.api_call("auth.test")['user_id']
 
-@slack_event_adapter.on('message')
-def message(payload):
-    event = payload.get('event', {})
-    channel_id = event.get('channel')
-    user_id = event.get('user')
-    text_message = event.get('text')
+match_words = ['jira', 'aws', 'jenkins']
 
-    if bot_id != user_id:
-        client.chat_postMessage(channel=channel_id, text=text_message)
 
-# Initializes your app with your bot token and socket mode handler
-# app = App(token=os.environ.get("SLACK_BOT_TOKEN"))
+class Message():
+    def __init__(self):
+        pass
 
-# Start your app
+    @slack_event_adapter.on('message')
+    def get_message(payload):
+        event = payload.get('event', {})
+        channel_id = event.get('channel')
+        user_id = event.get('user')
+        text_message = event.get('text')
+
+        message_dict = {
+            "event": event,
+            "channel_id": channel_id,
+            "user_id": user_id,
+            "text_message": text_message.split()
+        }
+        # if bot_id != user_id:
+        #     client.chat_postMessage(channel=channel_id, text=text_message)
+        Message().treat_message(use_message_dict=message_dict)
+
+
+    def treat_message(self, use_message_dict):
+        print(use_message_dict)
+        pass
+
+"""class Data():
+    def __init__(self):
+        pass
+
+    def start_somethig(self, data_dict):
+        print(data_dict)"""
+
 if __name__ == "__main__":
     app.run(debug=True)
     # SocketModeHandler(app, os.environ["SLACK_APP_TOKEN"]).start()
