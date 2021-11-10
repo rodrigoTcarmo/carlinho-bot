@@ -16,8 +16,17 @@ slack_event_adapter = SlackEventAdapter(
     os.environ['SIGNING_SECRET'], '/slack/events', app)
 
 client = slack.WebClient(token=os.environ['SLACK_TOKEN'])
+bot_id = client.api_call("auth.test")['user_id']
 
-client.chat_postMessage(channel='#estudos', text="Oh shit, here we go again!")
+@slack_event_adapter.on('message')
+def message(payload):
+    event = payload.get('event', {})
+    channel_id = event.get('channel')
+    user_id = event.get('user')
+    text_message = event.get('text')
+
+    if bot_id != user_id:
+        client.chat_postMessage(channel=channel_id, text=text_message)
 
 # Initializes your app with your bot token and socket mode handler
 # app = App(token=os.environ.get("SLACK_BOT_TOKEN"))
