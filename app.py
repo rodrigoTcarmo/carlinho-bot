@@ -18,9 +18,6 @@ slack_event_adapter = SlackEventAdapter(
 client = slack.WebClient(token=os.environ['SLACK_TOKEN'])
 bot_id = client.api_call("auth.test")['user_id']
 
-match_words = ['jira', 'aws', 'jenkins']
-
-
 class Message():
     def __init__(self):
         pass
@@ -36,16 +33,37 @@ class Message():
             "event": event,
             "channel_id": channel_id,
             "user_id": user_id,
-            "text_message": text_message.split()
+            "text_message": text_message
         }
         # if bot_id != user_id:
         #     client.chat_postMessage(channel=channel_id, text=text_message)
-        Message().treat_message(use_message_dict=message_dict)
-
+        f = Message()
+        f.analyze_message(use_split_message=f.treat_message(use_message_dict=message_dict))
 
     def treat_message(self, use_message_dict):
-        print(use_message_dict)
-        pass
+        split_message = use_message_dict["text_message"].split()
+        return split_message
+
+    def analyze_message(self, use_split_message):
+        dict_words = ['jira', 'aws', 'jenkins']
+
+        match = (set(dict_words) & set(use_split_message)).remove("{''}")
+
+        if match:
+            print('achei palavra:', match)
+            Message().search_books(search_topic=match)
+
+        else:
+            print('não achei palavra')
+
+    def search_books(self, search_topic):
+        from book import Library
+
+        print(search_topic)
+
+        l = Library().bookshelf()
+        print(l[search_topic])
+
 
 """class Data():
     def __init__(self):
