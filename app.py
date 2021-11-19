@@ -3,6 +3,7 @@ import slack
 from pathlib import Path
 from slack_bolt import App
 from flask import Flask
+from library import Library
 from dotenv import load_dotenv
 from slack_bolt.adapter.socket_mode import SocketModeHandler
 from slackeventsapi import SlackEventAdapter
@@ -18,8 +19,10 @@ slack_event_adapter = SlackEventAdapter(
 client = slack.WebClient(token=os.environ['SLACK_TOKEN'])
 bot_id = client.api_call("auth.test")['user_id']
 
-class Message():
+
+class Listen:
     def __init__(self):
+        self.get = None
         pass
 
     @slack_event_adapter.on('message')
@@ -37,40 +40,38 @@ class Message():
         }
         # if bot_id != user_id:
         #     client.chat_postMessage(channel=channel_id, text=text_message)
-        f = Message()
-        f.analyze_message(use_split_message=f.treat_message(use_message_dict=message_dict))
+        A = Analytics(message_dict)
+        A.analyze_message(use_split_message=A.treat_message())
 
-    def treat_message(self, use_message_dict):
-        split_message = use_message_dict["text_message"].split()
-        return split_message
+
+class Analytics:
+    def __init__(self, use_message_dict):
+        self.split_message = use_message_dict["text_message"].split()
+
+    def treat_message(self):
+        return [w.upper() for w in self.split_message]
 
     def analyze_message(self, use_split_message):
-        dict_words = ['jira', 'aws', 'jenkins']
+        from library import Library
+        L = Library()
+        match_word = (set(L.dictionary()) & set(use_split_message))
 
-        match = (set(dict_words) & set(use_split_message)).remove("{''}")
-
-        if match:
+        if match_word:
+            match = [s for s in match_word if s][0]
             print('achei palavra:', match)
-            Message().search_books(search_topic=match)
+            Analytics.search_books(self, search_topic=match)
 
         else:
             print('não achei palavra')
 
     def search_books(self, search_topic):
-        from book import Library
+        from library import Library
 
         print(search_topic)
 
-        l = Library().bookshelf()
-        print(l[search_topic])
+        read_book = Library().bookshelf()
+        print(read_book[search_topic])
 
-
-"""class Data():
-    def __init__(self):
-        pass
-
-    def start_somethig(self, data_dict):
-        print(data_dict)"""
 
 if __name__ == "__main__":
     app.run(debug=True)
