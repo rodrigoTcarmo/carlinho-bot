@@ -1,113 +1,66 @@
 import os
-import slack
-from pathlib import Path
-from slack_bolt import App
-from dotenv import load_dotenv
-from flask import Flask, request
-from slack_bolt.workflows.step import WorkflowStep
-from slack_bolt.adapter.flask import SlackRequestHandler
-from slack_bolt.adapter.socket_mode import SocketModeHandler
-from slackeventsapi import SlackEventAdapter
+from slack_sdk.web import WebClient
+from slack_sdk.socket_mode import SocketModeClient
 
-env_path = Path('.') / '.env'
-load_dotenv(dotenv_path=env_path)
-
-
-app = App(token=os.environ["SLACK_BOT_TOKEN"])
-
-
-def edit(ack, step, configure):
-    ack()
-
-    blocks = [
-        {
-            "type": "input",
-            "block_id": "task_name_input",
-            "element": {
-                "type": "plain_text_input",
-                "action_id": "name",
-                "placeholder": {"type": "plain_text", "text": "Add a task name"},
-            },
-            "label": {"type": "plain_text", "text": "Task name"},
-        },
-        {
-            "type": "input",
-            "block_id": "task_description_input",
-            "element": {
-                "type": "plain_text_input",
-                "action_id": "description",
-                "placeholder": {"type": "plain_text", "text": "Add a task description"},
-            },
-            "label": {"type": "plain_text", "text": "Task description"},
-        },
-    ]
-    configure(blocks=blocks)
-
-
-def save(ack, view, update):
-    ack()
-
-    values = view["state"]["values"]
-    task_name = values["task_name_input"]["name"]
-    task_description = values["task_description_input"]["description"]
-
-    inputs = {
-        "task_name": {"value": task_name["value"]},
-        "task_description": {"value": task_description["value"]}
-    }
-    outputs = [
-        {
-            "type": "text",
-            "name": "task_name",
-            "label": "Task name",
-        },
-        {
-            "type": "text",
-            "name": "task_description",
-            "label": "Task description",
-        }
-    ]
-    update(inputs=inputs, outputs=outputs)
-
-def execute(step, complete, fail):
-    inputs = step["inputs"]
-    # if everything was successful
-    outputs = {
-        "task_name": inputs["task_name"]["value"],
-        "task_description": inputs["task_description"]["value"],
-    }
-    complete(outputs=outputs)
-
-    # if something went wrong
-    error = {"message": "Just testing step failure!"}
-    fail(error=error)
-
-# Create a new WorkflowStep instance
-ws = WorkflowStep(
-    callback_id="add_task",
-    edit=edit,
-    save=save,
-    execute=execute,
+client = SocketModeClient(
+    app_token=os.environ.get("SLACK_APP_TOKEN"),
+    web_client=WebClient(token=os.environ.get("SLACK_BOT_TOKEN"))
 )
 
-# Pass Step to set up listeners
-app.step(ws)
-
-###############################################
-@app.event("app_mention")
-def mention_handler(body, ack):
-    ack(f"Oi <@{body['user_id']}>!")
+from slack_sdk.socket_mode.response import SocketModeResponse
+from slack_sdk.socket_mode.request import SocketModeRequest
 
 
-flask_app = Flask(__name__)
+def process(client: SocketModeClient, req: SocketModeRequest):
+    if req.type == "events_api":
+        response = SocketModeResponse(envelope_id=req.envelope_id)
+        client.send_socket_mode_response(response)
 
-handler = SlackRequestHandler(app)
+        if req.payload["event"]["type"] == "message" and req.payload["event"].get("subtype") is None:
+            client.web_client.reactions_add(name="eyes",
+                                            channel=req.payload["event"]["channel"],
+                                            timestamp=req.payload["event"]["ts"],
+                                            )
 
-@flask_app.route("/slack/events", methods=["POST"])
-def slack_events():
-    return handler.handle(request)
+    if req.type == "interactive" and req.payload.get("type") == "shortcut":
+        if req.payload["callback_id"] == "hello-shortcut":
+            response = SocketModeResponse(envelope_id=req.envelope_id)
+            client.send_socket_mode_response(response)
 
+            client.web_client.views_open(
+                trigger_id=req.payload["trigger_id"],
+                view={
+                    "type": "modal",
+                    "callback_id": "hello_modal",
+                    "title": {
+                        "type": "plain_text",
+                        "text": "Greetings!"
+                    },
+                    "submit": {
+                        "type": "plain_text",
+                        "text": "Good Bye"
+                    },
+                    "blocks": [
+                        {
+                            "type": "section",
+                            "text": {
+                                "type": "mrkdwn",
+                                "text": "Hello!"
+                            }
+                        }
+                    ]
 
-if __name__ == "__main__":
-    handler = SocketModeHandler(app, os.environ["SLACK_APP_TOKEN"])
-    handler.start()
+                }
+            )
+
+    if req.type == "interactive" and req.payload.get("type") == "view_submission":
+        if req.payload["view"]["callback_id"] == "hello-modal":
+            response = SocketModeResponse(envelope_id=req.envelope_id)
+            client.send_socket_mode_response(response)
+
+client.socket_mode_request_listeners.append(process)
+
+client.connect()
+
+from threading import Event
+Event().wait()
