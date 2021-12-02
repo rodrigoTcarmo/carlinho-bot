@@ -18,7 +18,6 @@ from slack_sdk.socket_mode.request import SocketModeRequest
 
 def process(client: SocketModeClient, req: SocketModeRequest):
     if req.type == "events_api":
-        print(req.payload)
         # Acknowledge the request anyway
         response = SocketModeResponse(envelope_id=req.envelope_id)
 
@@ -31,8 +30,14 @@ def process(client: SocketModeClient, req: SocketModeRequest):
                                             timestamp=req.payload["event"]["ts"],
                                             )
 
-        get_message = req.payload["event"]["text"]
-        print(get_message)
+            get_response = req.payload["event"]["text"].split()
+
+            get_match_word = analyze_message(event_text=get_response, payload=req.payload)
+            get_info = search_library(use_match=get_match_word)
+
+            client.web_client.chat_postMessage(channel="#estudos",
+                                               text=get_info)
+
 
     if req.type == "interactive" and req.payload.get("type") == "shortcut":
         if req.payload["callback_id"] == "hello-shortcut":
@@ -73,13 +78,42 @@ def process(client: SocketModeClient, req: SocketModeRequest):
             response = SocketModeResponse(envelope_id=req.envelope_id)
             client.send_socket_mode_response(response)
 
-# Add a new listener to receive messages from Slack
-# You can add more listeners like this
-client.socket_mode_request_listeners.append(process)
 
-# Establish a WebSocket connection to the Socket Mode servers
-client.connect()
+def analyze_message(event_text, payload):
+    try:
+        from library import Library
+        L = Library()
 
-# Just not to stop this process
-from threading import Event
-Event().wait()
+        dict = [d.upper() for d in L.dictionary()]
+        message = [m.upper() for m in event_text]
+
+        match_word = (set(dict) & set(message))
+        if match_word:
+            match = [s for s in match_word][0]
+            print("Palavra encontrada: ", match)
+
+            return match
+
+    except Exception as e_a:
+        print(e_a)
+
+
+def search_library(use_match):
+    from library import Library
+    read_book = Library().bookshelf()
+
+    return read_book[use_match]
+
+
+if __name__ == '__main__':
+    # Add a new listener to receive messages from Slack
+    # You can add more listeners like this
+    client.socket_mode_request_listeners.append(process)
+
+    # Establish a WebSocket connection to the Socket Mode servers
+    client.connect()
+
+    # Just not to stop this process
+    from threading import Event
+    Event().wait()
+
