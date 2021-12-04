@@ -15,8 +15,11 @@ client = SocketModeClient(
 from slack_sdk.socket_mode.response import SocketModeResponse
 from slack_sdk.socket_mode.request import SocketModeRequest
 
+client.web_client.conversations_info(channel="C02L6J53E65")
 
 def process(client: SocketModeClient, req: SocketModeRequest):
+
+
     if req.type == "events_api":
         # Acknowledge the request anyway
         response = SocketModeResponse(envelope_id=req.envelope_id)
