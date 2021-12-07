@@ -1,26 +1,42 @@
 import os
+from slack_bolt import App
+from dotenv import load_dotenv
+from slack_bolt.adapter.socket_mode import SocketModeHandler
 from slack_sdk.web import WebClient
 from slack_sdk.socket_mode import SocketModeClient
 
+load_dotenv()
+
 # Initialize SocketModeClient with an app-level token + WebClient
-client = SocketModeClient(
+"""client = SocketModeClient(
 
     # This app-level token will be used only for establishing a connection
     app_token=os.environ.get("SLACK_APP_TOKEN"),
 
     # You will be using this WebClient for performing Web API calls in listeners
     web_client=WebClient(token=os.environ.get("SLACK_BOT_TOKEN"))
-)
+)"""
 
-from slack_sdk.socket_mode.response import SocketModeResponse
-from slack_sdk.socket_mode.request import SocketModeRequest
+# from slack_sdk.socket_mode.response import SocketModeResponse
+# from slack_sdk.socket_mode.request import SocketModeRequest
 
-client.web_client.conversations_info(channel="C02L6J53E65")
+SLACK_BOT_TOKEN = os.environ.get("SLACK_BOT_TOKEN")
+SLACK_APP_TOKEN = os.environ.get("SLACK_APP_TOKEN")
 
-def process(client: SocketModeClient, req: SocketModeRequest):
+app = App(token=SLACK_BOT_TOKEN)
 
+
+@app.client.conversations_info(channel="C02L6J53E65")
+def mention_handler():
+    pass
+
+
+"""def process(client: SocketModeClient, req: SocketModeRequest):
+    me = client.web_client.conversations_info(channel="C02L6J53E65")
+    print(me)
 
     if req.type == "events_api":
+        print(req.type)
         # Acknowledge the request anyway
         response = SocketModeResponse(envelope_id=req.envelope_id)
 
@@ -40,7 +56,6 @@ def process(client: SocketModeClient, req: SocketModeRequest):
 
             client.web_client.chat_postMessage(channel="#estudos",
                                                text=get_info)
-
 
     if req.type == "interactive" and req.payload.get("type") == "shortcut":
         if req.payload["callback_id"] == "hello-shortcut":
@@ -105,18 +120,21 @@ def search_library(use_match):
     from library import Library
     read_book = Library().bookshelf()
 
-    return read_book[use_match]
+    return read_book[use_match]"""
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
+
+    handler = SocketModeHandler(app, SLACK_APP_TOKEN)
+    handler.start()
     # Add a new listener to receive messages from Slack
     # You can add more listeners like this
-    client.socket_mode_request_listeners.append(process)
+    # client.socket_mode_request_listeners.append(process)
 
     # Establish a WebSocket connection to the Socket Mode servers
-    client.connect()
+    # client.connect()
 
     # Just not to stop this process
-    from threading import Event
-    Event().wait()
+    # from threading import Event
+    # Event().wait()
 
