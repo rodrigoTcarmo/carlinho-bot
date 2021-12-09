@@ -2,6 +2,7 @@ import os
 from slack_bolt import App
 from dotenv import load_dotenv
 from slack_bolt.adapter.socket_mode import SocketModeHandler
+from slackeventsapi import SlackEventAdapter
 from slack_sdk.web import WebClient
 from slack_sdk.socket_mode import SocketModeClient
 
@@ -17,23 +18,29 @@ load_dotenv()
     web_client=WebClient(token=os.environ.get("SLACK_BOT_TOKEN"))
 )"""
 
-# from slack_sdk.socket_mode.response import SocketModeResponse
-# from slack_sdk.socket_mode.request import SocketModeRequest
+from slack_sdk.socket_mode.response import SocketModeResponse
+from slack_sdk.socket_mode.request import SocketModeRequest
+from slack_sdk.socket_mode.listeners import SocketModeRequestListener
 
 SLACK_BOT_TOKEN = os.environ.get("SLACK_BOT_TOKEN")
 SLACK_APP_TOKEN = os.environ.get("SLACK_APP_TOKEN")
+SIGNING_SECRET = os.environ.get("SIGNING_SECRET")
 
-app = App(token=SLACK_BOT_TOKEN)
-
-
-@app.client.conversations_info(channel="C02L6J53E65")
-def mention_handler():
-    pass
+app = App(token=SLACK_BOT_TOKEN,
+          signing_secret=SIGNING_SECRET)
 
 
-"""def process(client: SocketModeClient, req: SocketModeRequest):
-    me = client.web_client.conversations_info(channel="C02L6J53E65")
-    print(me)
+
+
+@app.message()
+def mention_handler(body, say):
+    print("OUVI HEIN!")
+
+
+
+"""def process(client: SocketModeClient, req: SocketModeRequestListener):
+    print(req)
+    print(client)
 
     if req.type == "events_api":
         print(req.type)
@@ -127,14 +134,13 @@ if __name__ == "__main__":
 
     handler = SocketModeHandler(app, SLACK_APP_TOKEN)
     handler.start()
-    # Add a new listener to receive messages from Slack
-    # You can add more listeners like this
+
+    ####################################################
+
     # client.socket_mode_request_listeners.append(process)
-
-    # Establish a WebSocket connection to the Socket Mode servers
+    #
     # client.connect()
-
-    # Just not to stop this process
+    #
     # from threading import Event
     # Event().wait()
 
