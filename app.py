@@ -1,18 +1,29 @@
 import os
+from art import *
 from slack_bolt import App
 from dotenv import load_dotenv
+from Logs.log_engine import LogEngine
 from slack_bolt.adapter.socket_mode import SocketModeHandler
 load_dotenv()
 
 SLACK_BOT_TOKEN = os.environ.get("SLACK_BOT_TOKEN")
 SLACK_APP_TOKEN = os.environ.get("SLACK_APP_TOKEN")
-SIGNING_SECRET = os.environ.get("SIGNING_SECRET")
 
 app = App(token=SLACK_BOT_TOKEN)
 
 
+class StartEngine:
+    def __init__(self):
+        """========== START BOT BANNER =========="""
+        tprint("SAN FIERRO", "broadway")
+
+        """========== START BOT ENGINE =========="""
+        Listen()
+
+
 class Listen:
     def __init__(self):
+        self.data = None
         handler = SocketModeHandler(app, SLACK_APP_TOKEN)
         handler.start()
 
@@ -31,6 +42,7 @@ class Listen:
             "text": text,
             "ts": ts
         }
+
         A = Analytics()
         A.get_data(use_data=data)
 
@@ -48,40 +60,92 @@ class Analytics:
         self.ts = None
 
     def get_data(self, use_data):
-        self.split_message = use_data['text'].split()
-        self.user_id = use_data['user_id']
-        self.channel = use_data['channel']
-        self.text = use_data['text']
-        self.ts = use_data['ts']
+        log.info("[!] - Collecting data")
+
+        try:
+            log.info("[!] - Getting split text message...")
+            self.split_message = use_data['text'].split()
+            log.info("[:P] - Success!\n")
+
+        except Exception as split_text_err:
+            log.info("[X] - Error getting text message!")
+            log.info(split_text_err)
+
+        try:
+            log.info("[!] - Getting user ID...")
+            self.user_id = use_data['user_id']
+            log.info("[:P] - Success!\n")
+
+        except Exception as userid_err:
+            log.info("[X] - Error getting user ID!")
+            log.info(userid_err)
+
+        try:
+            log.info("[!] - Getting channel ID...")
+            self.channel = use_data['channel']
+            log.info("[:P] - Success!\n")
+
+        except Exception as channel_err:
+            log.info("[X] - Error getting channel ID!")
+            log.info(channel_err)
+
+        try:
+            log.info("[!] - Getting text message...")
+            self.text = use_data['text']
+            log.info("[:P] - Success!\n")
+
+        except Exception as text_err:
+            log.info("[X] - Error getting text message!")
+            log.info(text_err)
+
+        try:
+            log.info("[!] - Getting message timestamp...")
+            self.ts = use_data['ts']
+            log.info("[:P] - Success!\n")
+
+        except Exception as ts_err:
+            log.info("[X] - Error getting message timestamp!")
+            log.info(ts_err)
 
     def sanitize(self):
+        log.info("[!] - Sanitizing collected messages")
         return [w.upper() for w in self.split_message]
 
     def analyze_message(self, use_split_message):
+
+        log.info("[!] - Analyzing data..")
         from library import Library
         L = Library()
+
+        log.info("[!] - Getting matched words")
         match_word = (set(L.dictionary()) & set(use_split_message))
 
         if match_word:
             self.match = [s for s in match_word if s][0]
-            print('Achei palavra:', self.match)
-
+            log.info(f"[!] - Found word: {self.match}")
             from library import Library
-            print(self.match)
 
             read_book = Library().bookshelf()
-            print(read_book[self.match])
+            log.info(f"[:P] - {read_book[self.match]}")
 
         else:
-            print("Não achei nada")
+            log.info("[!] - Unmatched word")
 
     def delivery_thread(self):
-        app.client.chat_postMessage(
-            channel=self.channel,
-            thread_ts=self.ts,
-            text=self.text
-        )
+        log.info("[!] - Sending response message...")
+
+        try:
+            app.client.chat_postMessage(
+                channel=self.channel,
+                thread_ts=self.ts,
+                text=self.text
+            )
+        except Exception as slack_reply_err:
+            log.error("[X] - Error sending slack message!")
+            log.error(slack_reply_err)
 
 
 if __name__ == "__main__":
-    Listen()
+    """========== SET LOG =========="""
+    log = LogEngine(__name__).log()
+    StartEngine()
