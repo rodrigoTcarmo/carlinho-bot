@@ -17,7 +17,7 @@ class LogEngine:
 
             formatter = logging.Formatter('%(asctime)s - %(levelname)s - --> %(message)s')
 
-            file_handler = TimedRotatingFileHandler(r'slack_bot.log', when='midnight', interval=1)
+            file_handler = TimedRotatingFileHandler(r'Logs\log_data\slack_bot.log', when='midnight', interval=1)
             file_handler.setLevel(logging.DEBUG)
             file_handler.setFormatter(formatter)
 
