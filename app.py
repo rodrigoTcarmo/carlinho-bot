@@ -1,6 +1,7 @@
 import os
 from slack_bolt import App
 from dotenv import load_dotenv
+from Logs.log_engine import LogEngine
 from slack_bolt.adapter.socket_mode import SocketModeHandler
 load_dotenv()
 
@@ -13,6 +14,10 @@ app = App(token=SLACK_BOT_TOKEN)
 
 class Listen:
     def __init__(self):
+        """========== SET LOG =========="""
+        self.log = LogEngine(__name__).log()
+
+        """==========  =========="""
         handler = SocketModeHandler(app, SLACK_APP_TOKEN)
         handler.start()
 
