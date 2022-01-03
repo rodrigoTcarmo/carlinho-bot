@@ -1,0 +1,41 @@
+2021-12-16 16:06:25,817 - INFO - --> [!] - Collecting data
+2021-12-16 16:06:25,818 - INFO - --> [!] - Getting split text message...
+2021-12-16 16:06:25,818 - INFO - --> [:P] - Success!
+
+2021-12-16 16:06:25,818 - INFO - --> [!] - Getting user ID...
+2021-12-16 16:06:25,818 - INFO - --> [:P] - Success!
+
+2021-12-16 16:06:25,819 - INFO - --> [!] - Getting channel ID...
+2021-12-16 16:06:25,819 - INFO - --> [:P] - Success!
+
+2021-12-16 16:06:25,819 - INFO - --> [!] - Getting text message...
+2021-12-16 16:06:25,820 - INFO - --> [:P] - Success!
+
+2021-12-16 16:06:25,820 - INFO - --> [!] - Getting message timestamp...
+2021-12-16 16:06:25,821 - INFO - --> [:P] - Success!
+
+2021-12-16 16:06:25,821 - INFO - --> [!] - Sanitizing collected messages
+2021-12-16 16:06:25,821 - INFO - --> [!] - Analyzing data..
+2021-12-16 16:06:25,823 - INFO - --> [!] - Getting matched words
+2021-12-16 16:06:25,823 - INFO - --> [!] - Unmatched word
+2021-12-16 17:03:52,563 - INFO - --> [!] - Collecting data
+2021-12-16 17:03:52,565 - INFO - --> [!] - Getting split text message...
+2021-12-16 17:03:52,565 - INFO - --> [:P] - Success!
+
+2021-12-16 17:03:52,566 - INFO - --> [!] - Getting user ID...
+2021-12-16 17:03:52,566 - INFO - --> [:P] - Success!
+
+2021-12-16 17:03:52,566 - INFO - --> [!] - Getting channel ID...
+2021-12-16 17:03:52,566 - INFO - --> [:P] - Success!
+
+2021-12-16 17:03:52,566 - INFO - --> [!] - Getting text message...
+2021-12-16 17:03:52,567 - INFO - --> [:P] - Success!
+
+2021-12-16 17:03:52,567 - INFO - --> [!] - Getting message timestamp...
+2021-12-16 17:03:52,568 - INFO - --> [:P] - Success!
+
+2021-12-16 17:03:52,568 - INFO - --> [!] - Sanitizing collected messages
+2021-12-16 17:03:52,568 - INFO - --> [!] - Analyzing data..
+2021-12-16 17:03:52,570 - INFO - --> [!] - Getting matched words
+2021-12-16 17:03:52,570 - INFO - --> [!] - Unmatched word
+2021-12-16 17:03:52,571 - INFO - --> [!] - Sending response message...

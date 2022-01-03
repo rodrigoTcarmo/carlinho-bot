@@ -43,6 +43,11 @@ class Listen:
             "ts": ts
         }
 
+        try:
+            app.client.reactions_add(channel=channel, name="eyes", timestamp=ts)
+        except Exception as react_err:
+            log.info("[X] - Error trying to react message")
+
         A = Analytics()
         A.get_data(use_data=data)
 
