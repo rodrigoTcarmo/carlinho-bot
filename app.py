@@ -15,7 +15,7 @@ app = App(token=SLACK_BOT_TOKEN)
 class StartEngine:
     def __init__(self):
         """========== START BOT BANNER =========="""
-        tprint("SAN FIERRO", "broadway")
+        tprint("SAN FIERRO", "alligator")
 
         """========== START BOT ENGINE =========="""
         Listen()
@@ -47,6 +47,7 @@ class Listen:
             app.client.reactions_add(channel=channel, name="eyes", timestamp=ts)
         except Exception as react_err:
             log.info("[X] - Error trying to react message")
+            log.info(react_err)
 
         A = Analytics()
         A.get_data(use_data=data)
@@ -114,7 +115,7 @@ class Analytics:
 
     def sanitize(self):
         log.info("[!] - Sanitizing collected messages")
-        return [w.upper() for w in self.split_message]
+        return [w.lower() for w in self.split_message]
 
     def analyze_message(self, use_split_message):
 
@@ -123,7 +124,14 @@ class Analytics:
         L = Library()
 
         log.info("[!] - Getting matched words")
-        match_word = (set(L.dictionary()) & set(use_split_message))
+
+        # for slack_message in use_split_message:
+        #     for pagpedia_index in L.dictionary():
+        #         if slack_message in pagpedia_index:
+        #             log.info(f"Encontrado informações sobre '{slack_message}' - '{pagpedia_index}'.")
+        #         else:
+        #             pass
+        # breakpoint()
 
         if match_word:
             self.match = [s for s in match_word if s][0]

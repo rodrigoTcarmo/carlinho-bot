@@ -1,0 +1,441 @@
+2022-01-03 11:04:09,782 - INFO - --> [!] - Collecting data
+2022-01-03 11:04:09,786 - INFO - --> [!] - Getting split text message...
+2022-01-03 11:04:09,786 - INFO - --> [:P] - Success!
+
+2022-01-03 11:04:09,786 - INFO - --> [!] - Getting user ID...
+2022-01-03 11:04:09,787 - INFO - --> [:P] - Success!
+
+2022-01-03 11:04:09,787 - INFO - --> [!] - Getting channel ID...
+2022-01-03 11:04:09,788 - INFO - --> [:P] - Success!
+
+2022-01-03 11:04:09,788 - INFO - --> [!] - Getting text message...
+2022-01-03 11:04:09,788 - INFO - --> [:P] - Success!
+
+2022-01-03 11:04:09,788 - INFO - --> [!] - Getting message timestamp...
+2022-01-03 11:04:09,790 - INFO - --> [:P] - Success!
+
+2022-01-03 11:04:09,790 - INFO - --> [!] - Sanitizing collected messages
+2022-01-03 11:04:09,791 - INFO - --> [!] - Analyzing data..
+2022-01-03 11:04:09,793 - INFO - --> [!] - Getting matched words
+2022-01-03 11:04:09,794 - INFO - --> [!] - Unmatched word
+2022-01-03 11:04:09,794 - INFO - --> [!] - Sending response message...
+2022-01-03 11:06:06,590 - INFO - --> [!] - Collecting data
+2022-01-03 11:06:06,591 - INFO - --> [!] - Getting split text message...
+2022-01-03 11:06:06,591 - INFO - --> [:P] - Success!
+
+2022-01-03 11:06:06,591 - INFO - --> [!] - Getting user ID...
+2022-01-03 11:06:06,591 - INFO - --> [:P] - Success!
+
+2022-01-03 11:06:06,591 - INFO - --> [!] - Getting channel ID...
+2022-01-03 11:06:06,591 - INFO - --> [:P] - Success!
+
+2022-01-03 11:06:06,591 - INFO - --> [!] - Getting text message...
+2022-01-03 11:06:06,591 - INFO - --> [:P] - Success!
+
+2022-01-03 11:06:06,591 - INFO - --> [!] - Getting message timestamp...
+2022-01-03 11:06:06,591 - INFO - --> [:P] - Success!
+
+2022-01-03 11:06:06,592 - INFO - --> [!] - Sanitizing collected messages
+2022-01-03 11:06:06,592 - INFO - --> [!] - Analyzing data..
+2022-01-03 11:06:06,592 - INFO - --> [!] - Getting matched words
+2022-01-03 11:06:06,592 - INFO - --> [!] - Unmatched word
+2022-01-03 11:06:06,592 - INFO - --> [!] - Sending response message...
+2022-01-03 11:12:31,367 - INFO - --> [!] - Collecting data
+2022-01-03 11:12:31,367 - INFO - --> [!] - Getting split text message...
+2022-01-03 11:12:31,367 - INFO - --> [:P] - Success!
+
+2022-01-03 11:12:31,368 - INFO - --> [!] - Getting user ID...
+2022-01-03 11:12:31,368 - INFO - --> [:P] - Success!
+
+2022-01-03 11:12:31,368 - INFO - --> [!] - Getting channel ID...
+2022-01-03 11:12:31,368 - INFO - --> [:P] - Success!
+
+2022-01-03 11:12:31,368 - INFO - --> [!] - Getting text message...
+2022-01-03 11:12:31,368 - INFO - --> [:P] - Success!
+
+2022-01-03 11:12:31,368 - INFO - --> [!] - Getting message timestamp...
+2022-01-03 11:12:31,369 - INFO - --> [:P] - Success!
+
+2022-01-03 11:12:31,369 - INFO - --> [!] - Sanitizing collected messages
+2022-01-03 11:12:31,369 - INFO - --> [!] - Analyzing data..
+2022-01-03 11:12:31,370 - INFO - --> [!] - Getting matched words
+2022-01-03 11:12:31,370 - INFO - --> [!] - Unmatched word
+2022-01-03 11:12:31,370 - INFO - --> [!] - Sending response message...
+2022-01-03 11:12:37,564 - INFO - --> [!] - Collecting data
+2022-01-03 11:12:37,564 - INFO - --> [!] - Getting split text message...
+2022-01-03 11:12:37,565 - INFO - --> [:P] - Success!
+
+2022-01-03 11:12:37,565 - INFO - --> [!] - Getting user ID...
+2022-01-03 11:12:37,565 - INFO - --> [:P] - Success!
+
+2022-01-03 11:12:37,565 - INFO - --> [!] - Getting channel ID...
+2022-01-03 11:12:37,565 - INFO - --> [:P] - Success!
+
+2022-01-03 11:12:37,565 - INFO - --> [!] - Getting text message...
+2022-01-03 11:12:37,565 - INFO - --> [:P] - Success!
+
+2022-01-03 11:12:37,565 - INFO - --> [!] - Getting message timestamp...
+2022-01-03 11:12:37,565 - INFO - --> [:P] - Success!
+
+2022-01-03 11:12:37,565 - INFO - --> [!] - Sanitizing collected messages
+2022-01-03 11:12:37,565 - INFO - --> [!] - Analyzing data..
+2022-01-03 11:12:37,565 - INFO - --> [!] - Getting matched words
+2022-01-03 11:12:37,565 - INFO - --> [!] - Unmatched word
+2022-01-03 11:12:37,565 - INFO - --> [!] - Sending response message...
+2022-01-03 13:19:51,532 - INFO - --> [!] - Collecting data
+2022-01-03 13:19:51,534 - INFO - --> [!] - Getting split text message...
+2022-01-03 13:19:51,534 - INFO - --> [:P] - Success!
+
+2022-01-03 13:19:51,534 - INFO - --> [!] - Getting user ID...
+2022-01-03 13:19:51,534 - INFO - --> [:P] - Success!
+
+2022-01-03 13:19:51,535 - INFO - --> [!] - Getting channel ID...
+2022-01-03 13:19:51,535 - INFO - --> [:P] - Success!
+
+2022-01-03 13:19:51,535 - INFO - --> [!] - Getting text message...
+2022-01-03 13:19:51,535 - INFO - --> [:P] - Success!
+
+2022-01-03 13:19:51,535 - INFO - --> [!] - Getting message timestamp...
+2022-01-03 13:19:51,535 - INFO - --> [:P] - Success!
+
+2022-01-03 13:19:51,535 - INFO - --> [!] - Sanitizing collected messages
+2022-01-03 13:19:51,535 - INFO - --> [!] - Analyzing data..
+2022-01-03 13:19:51,537 - INFO - --> [!] - Getting matched words
+2022-01-03 13:19:51,538 - INFO - --> [!] - Unmatched word
+2022-01-03 13:19:51,538 - INFO - --> [!] - Sending response message...
+2022-01-03 13:21:48,596 - INFO - --> [!] - Collecting data
+2022-01-03 13:21:48,596 - INFO - --> [!] - Getting split text message...
+2022-01-03 13:21:48,596 - INFO - --> [:P] - Success!
+
+2022-01-03 13:21:48,596 - INFO - --> [!] - Getting user ID...
+2022-01-03 13:21:48,596 - INFO - --> [:P] - Success!
+
+2022-01-03 13:21:48,596 - INFO - --> [!] - Getting channel ID...
+2022-01-03 13:21:48,597 - INFO - --> [:P] - Success!
+
+2022-01-03 13:21:48,597 - INFO - --> [!] - Getting text message...
+2022-01-03 13:21:48,597 - INFO - --> [:P] - Success!
+
+2022-01-03 13:21:48,597 - INFO - --> [!] - Getting message timestamp...
+2022-01-03 13:21:48,597 - INFO - --> [:P] - Success!
+
+2022-01-03 13:21:48,597 - INFO - --> [!] - Sanitizing collected messages
+2022-01-03 13:21:48,597 - INFO - --> [!] - Analyzing data..
+2022-01-03 13:21:48,598 - INFO - --> [!] - Getting matched words
+2022-01-03 13:21:48,598 - INFO - --> [!] - Unmatched word
+2022-01-03 13:21:48,598 - INFO - --> [!] - Sending response message...
+2022-01-03 13:26:14,347 - INFO - --> [!] - Collecting data
+2022-01-03 13:26:14,347 - INFO - --> [!] - Getting split text message...
+2022-01-03 13:26:14,347 - INFO - --> [:P] - Success!
+
+2022-01-03 13:26:14,347 - INFO - --> [!] - Getting user ID...
+2022-01-03 13:26:14,347 - INFO - --> [:P] - Success!
+
+2022-01-03 13:26:14,347 - INFO - --> [!] - Getting channel ID...
+2022-01-03 13:26:14,347 - INFO - --> [:P] - Success!
+
+2022-01-03 13:26:14,347 - INFO - --> [!] - Getting text message...
+2022-01-03 13:26:14,347 - INFO - --> [:P] - Success!
+
+2022-01-03 13:26:14,348 - INFO - --> [!] - Getting message timestamp...
+2022-01-03 13:26:14,348 - INFO - --> [:P] - Success!
+
+2022-01-03 13:26:14,348 - INFO - --> [!] - Sanitizing collected messages
+2022-01-03 13:26:14,348 - INFO - --> [!] - Analyzing data..
+2022-01-03 13:26:14,349 - INFO - --> [!] - Getting matched words
+2022-01-03 13:26:14,349 - INFO - --> [!] - Unmatched word
+2022-01-03 13:26:14,349 - INFO - --> [!] - Sending response message...
+2022-01-03 13:29:51,854 - INFO - --> [!] - Collecting data
+2022-01-03 13:29:51,856 - INFO - --> [!] - Getting split text message...
+2022-01-03 13:29:51,856 - INFO - --> [:P] - Success!
+
+2022-01-03 13:29:51,857 - INFO - --> [!] - Getting user ID...
+2022-01-03 13:29:51,857 - INFO - --> [:P] - Success!
+
+2022-01-03 13:29:51,858 - INFO - --> [!] - Getting channel ID...
+2022-01-03 13:29:51,859 - INFO - --> [:P] - Success!
+
+2022-01-03 13:29:51,859 - INFO - --> [!] - Getting text message...
+2022-01-03 13:29:51,859 - INFO - --> [:P] - Success!
+
+2022-01-03 13:29:51,859 - INFO - --> [!] - Getting message timestamp...
+2022-01-03 13:29:51,859 - INFO - --> [:P] - Success!
+
+2022-01-03 13:29:51,859 - INFO - --> [!] - Sanitizing collected messages
+2022-01-03 13:29:51,860 - INFO - --> [!] - Analyzing data..
+2022-01-03 13:29:51,863 - INFO - --> [!] - Getting matched words
+2022-01-03 13:29:51,863 - INFO - --> [!] - Unmatched word
+2022-01-03 13:29:51,863 - INFO - --> [!] - Sending response message...
+2022-01-03 13:42:59,756 - INFO - --> [!] - Collecting data
+2022-01-03 13:42:59,756 - INFO - --> [!] - Getting split text message...
+2022-01-03 13:42:59,756 - INFO - --> [:P] - Success!
+
+2022-01-03 13:42:59,757 - INFO - --> [!] - Getting user ID...
+2022-01-03 13:42:59,757 - INFO - --> [:P] - Success!
+
+2022-01-03 13:42:59,757 - INFO - --> [!] - Getting channel ID...
+2022-01-03 13:42:59,757 - INFO - --> [:P] - Success!
+
+2022-01-03 13:42:59,757 - INFO - --> [!] - Getting text message...
+2022-01-03 13:42:59,757 - INFO - --> [:P] - Success!
+
+2022-01-03 13:42:59,757 - INFO - --> [!] - Getting message timestamp...
+2022-01-03 13:42:59,757 - INFO - --> [:P] - Success!
+
+2022-01-03 13:42:59,757 - INFO - --> [!] - Sanitizing collected messages
+2022-01-03 13:42:59,757 - INFO - --> [!] - Analyzing data..
+2022-01-03 13:42:59,758 - INFO - --> [!] - Getting matched words
+2022-01-03 13:42:59,758 - INFO - --> [!] - Unmatched word
+2022-01-03 13:42:59,758 - INFO - --> [!] - Sending response message...
+2022-01-03 13:43:48,765 - INFO - --> [!] - Collecting data
+2022-01-03 13:43:48,765 - INFO - --> [!] - Getting split text message...
+2022-01-03 13:43:48,766 - INFO - --> [:P] - Success!
+
+2022-01-03 13:43:48,766 - INFO - --> [!] - Getting user ID...
+2022-01-03 13:43:48,766 - INFO - --> [:P] - Success!
+
+2022-01-03 13:43:48,766 - INFO - --> [!] - Getting channel ID...
+2022-01-03 13:43:48,766 - INFO - --> [:P] - Success!
+
+2022-01-03 13:43:48,766 - INFO - --> [!] - Getting text message...
+2022-01-03 13:43:48,767 - INFO - --> [:P] - Success!
+
+2022-01-03 13:43:48,767 - INFO - --> [!] - Getting message timestamp...
+2022-01-03 13:43:48,767 - INFO - --> [:P] - Success!
+
+2022-01-03 13:43:48,767 - INFO - --> [!] - Sanitizing collected messages
+2022-01-03 13:43:48,767 - INFO - --> [!] - Analyzing data..
+2022-01-03 13:43:48,768 - INFO - --> [!] - Getting matched words
+2022-01-03 13:43:48,769 - INFO - --> [!] - Unmatched word
+2022-01-03 13:43:48,769 - INFO - --> [!] - Sending response message...
+2022-01-03 13:43:53,411 - INFO - --> [!] - Collecting data
+2022-01-03 13:43:53,412 - INFO - --> [!] - Getting split text message...
+2022-01-03 13:43:53,412 - INFO - --> [:P] - Success!
+
+2022-01-03 13:43:53,412 - INFO - --> [!] - Getting user ID...
+2022-01-03 13:43:53,412 - INFO - --> [:P] - Success!
+
+2022-01-03 13:43:53,412 - INFO - --> [!] - Getting channel ID...
+2022-01-03 13:43:53,412 - INFO - --> [:P] - Success!
+
+2022-01-03 13:43:53,412 - INFO - --> [!] - Getting text message...
+2022-01-03 13:43:53,412 - INFO - --> [:P] - Success!
+
+2022-01-03 13:43:53,412 - INFO - --> [!] - Getting message timestamp...
+2022-01-03 13:43:53,412 - INFO - --> [:P] - Success!
+
+2022-01-03 13:43:53,412 - INFO - --> [!] - Sanitizing collected messages
+2022-01-03 13:43:53,413 - INFO - --> [!] - Analyzing data..
+2022-01-03 13:43:53,413 - INFO - --> [!] - Getting matched words
+2022-01-03 13:43:53,413 - INFO - --> [!] - Unmatched word
+2022-01-03 13:43:53,413 - INFO - --> [!] - Sending response message...
+2022-01-03 13:44:48,395 - INFO - --> [!] - Collecting data
+2022-01-03 13:44:48,396 - INFO - --> [!] - Getting split text message...
+2022-01-03 13:44:48,396 - INFO - --> [:P] - Success!
+
+2022-01-03 13:44:48,397 - INFO - --> [!] - Getting user ID...
+2022-01-03 13:44:48,397 - INFO - --> [:P] - Success!
+
+2022-01-03 13:44:48,397 - INFO - --> [!] - Getting channel ID...
+2022-01-03 13:44:48,397 - INFO - --> [:P] - Success!
+
+2022-01-03 13:44:48,397 - INFO - --> [!] - Getting text message...
+2022-01-03 13:44:48,397 - INFO - --> [:P] - Success!
+
+2022-01-03 13:44:48,397 - INFO - --> [!] - Getting message timestamp...
+2022-01-03 13:44:48,398 - INFO - --> [:P] - Success!
+
+2022-01-03 13:44:48,398 - INFO - --> [!] - Sanitizing collected messages
+2022-01-03 13:44:48,398 - INFO - --> [!] - Analyzing data..
+2022-01-03 13:44:48,399 - INFO - --> [!] - Getting matched words
+2022-01-03 13:44:48,399 - INFO - --> [!] - Unmatched word
+2022-01-03 13:44:48,400 - INFO - --> [!] - Sending response message...
+2022-01-03 13:45:49,263 - INFO - --> [!] - Collecting data
+2022-01-03 13:45:49,263 - INFO - --> [!] - Getting split text message...
+2022-01-03 13:45:49,263 - INFO - --> [:P] - Success!
+
+2022-01-03 13:45:49,263 - INFO - --> [!] - Getting user ID...
+2022-01-03 13:45:49,264 - INFO - --> [:P] - Success!
+
+2022-01-03 13:45:49,264 - INFO - --> [!] - Getting channel ID...
+2022-01-03 13:45:49,264 - INFO - --> [:P] - Success!
+
+2022-01-03 13:45:49,264 - INFO - --> [!] - Getting text message...
+2022-01-03 13:45:49,264 - INFO - --> [:P] - Success!
+
+2022-01-03 13:45:49,264 - INFO - --> [!] - Getting message timestamp...
+2022-01-03 13:45:49,264 - INFO - --> [:P] - Success!
+
+2022-01-03 13:45:49,264 - INFO - --> [!] - Sanitizing collected messages
+2022-01-03 13:45:49,264 - INFO - --> [!] - Analyzing data..
+2022-01-03 13:45:49,265 - INFO - --> [!] - Getting matched words
+2022-01-03 13:45:49,265 - INFO - --> [!] - Unmatched word
+2022-01-03 13:45:49,265 - INFO - --> [!] - Sending response message...
+2022-01-03 13:46:35,980 - INFO - --> [!] - Collecting data
+2022-01-03 13:46:35,981 - INFO - --> [!] - Getting split text message...
+2022-01-03 13:46:35,981 - INFO - --> [:P] - Success!
+
+2022-01-03 13:46:35,981 - INFO - --> [!] - Getting user ID...
+2022-01-03 13:46:35,981 - INFO - --> [:P] - Success!
+
+2022-01-03 13:46:35,981 - INFO - --> [!] - Getting channel ID...
+2022-01-03 13:46:35,981 - INFO - --> [:P] - Success!
+
+2022-01-03 13:46:35,981 - INFO - --> [!] - Getting text message...
+2022-01-03 13:46:35,981 - INFO - --> [:P] - Success!
+
+2022-01-03 13:46:35,981 - INFO - --> [!] - Getting message timestamp...
+2022-01-03 13:46:35,981 - INFO - --> [:P] - Success!
+
+2022-01-03 13:46:35,981 - INFO - --> [!] - Sanitizing collected messages
+2022-01-03 13:46:35,981 - INFO - --> [!] - Analyzing data..
+2022-01-03 13:46:35,982 - INFO - --> [!] - Getting matched words
+2022-01-03 13:46:35,982 - INFO - --> [!] - Unmatched word
+2022-01-03 13:46:35,982 - INFO - --> [!] - Sending response message...
+2022-01-03 13:48:07,515 - INFO - --> [!] - Collecting data
+2022-01-03 13:48:07,516 - INFO - --> [!] - Getting split text message...
+2022-01-03 13:48:07,516 - INFO - --> [:P] - Success!
+
+2022-01-03 13:48:07,517 - INFO - --> [!] - Getting user ID...
+2022-01-03 13:48:07,517 - INFO - --> [:P] - Success!
+
+2022-01-03 13:48:07,517 - INFO - --> [!] - Getting channel ID...
+2022-01-03 13:48:07,517 - INFO - --> [:P] - Success!
+
+2022-01-03 13:48:07,517 - INFO - --> [!] - Getting text message...
+2022-01-03 13:48:07,517 - INFO - --> [:P] - Success!
+
+2022-01-03 13:48:07,517 - INFO - --> [!] - Getting message timestamp...
+2022-01-03 13:48:07,517 - INFO - --> [:P] - Success!
+
+2022-01-03 13:48:07,518 - INFO - --> [!] - Sanitizing collected messages
+2022-01-03 13:48:07,518 - INFO - --> [!] - Analyzing data..
+2022-01-03 13:48:07,519 - INFO - --> [!] - Getting matched words
+2022-01-03 13:48:07,519 - INFO - --> [!] - Unmatched word
+2022-01-03 13:48:07,519 - INFO - --> [!] - Sending response message...
+2022-01-03 13:48:53,042 - INFO - --> [!] - Collecting data
+2022-01-03 13:48:53,042 - INFO - --> [!] - Getting split text message...
+2022-01-03 13:48:53,042 - INFO - --> [:P] - Success!
+
+2022-01-03 13:48:53,042 - INFO - --> [!] - Getting user ID...
+2022-01-03 13:48:53,042 - INFO - --> [:P] - Success!
+
+2022-01-03 13:48:53,042 - INFO - --> [!] - Getting channel ID...
+2022-01-03 13:48:53,043 - INFO - --> [:P] - Success!
+
+2022-01-03 13:48:53,043 - INFO - --> [!] - Getting text message...
+2022-01-03 13:48:53,043 - INFO - --> [:P] - Success!
+
+2022-01-03 13:48:53,043 - INFO - --> [!] - Getting message timestamp...
+2022-01-03 13:48:53,043 - INFO - --> [:P] - Success!
+
+2022-01-03 13:48:53,043 - INFO - --> [!] - Sanitizing collected messages
+2022-01-03 13:48:53,043 - INFO - --> [!] - Analyzing data..
+2022-01-03 13:48:53,045 - INFO - --> [!] - Getting matched words
+2022-01-03 13:48:53,045 - INFO - --> [!] - Unmatched word
+2022-01-03 13:48:53,045 - INFO - --> [!] - Sending response message...
+2022-01-03 13:48:59,102 - INFO - --> [!] - Collecting data
+2022-01-03 13:48:59,103 - INFO - --> [!] - Getting split text message...
+2022-01-03 13:48:59,104 - INFO - --> [:P] - Success!
+
+2022-01-03 13:48:59,104 - INFO - --> [!] - Getting user ID...
+2022-01-03 13:48:59,104 - INFO - --> [:P] - Success!
+
+2022-01-03 13:48:59,104 - INFO - --> [!] - Getting channel ID...
+2022-01-03 13:48:59,104 - INFO - --> [:P] - Success!
+
+2022-01-03 13:48:59,104 - INFO - --> [!] - Getting text message...
+2022-01-03 13:48:59,104 - INFO - --> [:P] - Success!
+
+2022-01-03 13:48:59,104 - INFO - --> [!] - Getting message timestamp...
+2022-01-03 13:48:59,105 - INFO - --> [:P] - Success!
+
+2022-01-03 13:48:59,105 - INFO - --> [!] - Sanitizing collected messages
+2022-01-03 13:48:59,105 - INFO - --> [!] - Analyzing data..
+2022-01-03 13:48:59,105 - INFO - --> [!] - Getting matched words
+2022-01-03 13:48:59,105 - INFO - --> [!] - Unmatched word
+2022-01-03 13:48:59,105 - INFO - --> [!] - Sending response message...
+2022-01-03 13:49:07,177 - INFO - --> [!] - Collecting data
+2022-01-03 13:49:07,177 - INFO - --> [!] - Getting split text message...
+2022-01-03 13:49:07,177 - INFO - --> [:P] - Success!
+
+2022-01-03 13:49:07,177 - INFO - --> [!] - Getting user ID...
+2022-01-03 13:49:07,177 - INFO - --> [:P] - Success!
+
+2022-01-03 13:49:07,178 - INFO - --> [!] - Getting channel ID...
+2022-01-03 13:49:07,178 - INFO - --> [:P] - Success!
+
+2022-01-03 13:49:07,178 - INFO - --> [!] - Getting text message...
+2022-01-03 13:49:07,178 - INFO - --> [:P] - Success!
+
+2022-01-03 13:49:07,178 - INFO - --> [!] - Getting message timestamp...
+2022-01-03 13:49:07,178 - INFO - --> [:P] - Success!
+
+2022-01-03 13:49:07,178 - INFO - --> [!] - Sanitizing collected messages
+2022-01-03 13:49:07,178 - INFO - --> [!] - Analyzing data..
+2022-01-03 13:49:07,178 - INFO - --> [!] - Getting matched words
+2022-01-03 13:49:07,178 - INFO - --> [!] - Unmatched word
+2022-01-03 13:49:07,178 - INFO - --> [!] - Sending response message...
+2022-01-03 13:55:34,122 - INFO - --> [!] - Collecting data
+2022-01-03 13:55:34,122 - INFO - --> [!] - Getting split text message...
+2022-01-03 13:55:34,122 - INFO - --> [:P] - Success!
+
+2022-01-03 13:55:34,123 - INFO - --> [!] - Getting user ID...
+2022-01-03 13:55:34,123 - INFO - --> [:P] - Success!
+
+2022-01-03 13:55:34,123 - INFO - --> [!] - Getting channel ID...
+2022-01-03 13:55:34,123 - INFO - --> [:P] - Success!
+
+2022-01-03 13:55:34,123 - INFO - --> [!] - Getting text message...
+2022-01-03 13:55:34,123 - INFO - --> [:P] - Success!
+
+2022-01-03 13:55:34,123 - INFO - --> [!] - Getting message timestamp...
+2022-01-03 13:55:34,123 - INFO - --> [:P] - Success!
+
+2022-01-03 13:55:34,123 - INFO - --> [!] - Sanitizing collected messages
+2022-01-03 13:55:34,123 - INFO - --> [!] - Analyzing data..
+2022-01-03 13:55:34,124 - INFO - --> [!] - Getting matched words
+2022-01-03 13:55:34,125 - INFO - --> [!] - Unmatched word
+2022-01-03 13:55:34,125 - INFO - --> [!] - Sending response message...
+2022-01-03 14:23:07,373 - INFO - --> [!] - Collecting data
+2022-01-03 14:23:07,373 - INFO - --> [!] - Getting split text message...
+2022-01-03 14:23:07,373 - INFO - --> [:P] - Success!
+
+2022-01-03 14:23:07,373 - INFO - --> [!] - Getting user ID...
+2022-01-03 14:23:07,373 - INFO - --> [:P] - Success!
+
+2022-01-03 14:23:07,373 - INFO - --> [!] - Getting channel ID...
+2022-01-03 14:23:07,373 - INFO - --> [:P] - Success!
+
+2022-01-03 14:23:07,373 - INFO - --> [!] - Getting text message...
+2022-01-03 14:23:07,373 - INFO - --> [:P] - Success!
+
+2022-01-03 14:23:07,374 - INFO - --> [!] - Getting message timestamp...
+2022-01-03 14:23:07,374 - INFO - --> [:P] - Success!
+
+2022-01-03 14:23:07,374 - INFO - --> [!] - Sanitizing collected messages
+2022-01-03 14:23:07,374 - INFO - --> [!] - Analyzing data..
+2022-01-03 14:23:07,374 - INFO - --> [!] - Getting matched words
+2022-01-03 14:23:07,374 - INFO - --> [!] - Unmatched word
+2022-01-03 14:23:07,374 - INFO - --> [!] - Sending response message...
+2022-01-03 14:24:02,236 - INFO - --> [!] - Collecting data
+2022-01-03 14:24:02,236 - INFO - --> [!] - Getting split text message...
+2022-01-03 14:24:02,236 - INFO - --> [:P] - Success!
+
+2022-01-03 14:24:02,237 - INFO - --> [!] - Getting user ID...
+2022-01-03 14:24:02,237 - INFO - --> [:P] - Success!
+
+2022-01-03 14:24:02,237 - INFO - --> [!] - Getting channel ID...
+2022-01-03 14:24:02,237 - INFO - --> [:P] - Success!
+
+2022-01-03 14:24:02,237 - INFO - --> [!] - Getting text message...
+2022-01-03 14:24:02,237 - INFO - --> [:P] - Success!
+
+2022-01-03 14:24:02,237 - INFO - --> [!] - Getting message timestamp...
+2022-01-03 14:24:02,237 - INFO - --> [:P] - Success!
+
+2022-01-03 14:24:02,237 - INFO - --> [!] - Sanitizing collected messages
+2022-01-03 14:24:02,237 - INFO - --> [!] - Analyzing data..
+2022-01-03 14:24:02,240 - INFO - --> [!] - Getting matched words
+2022-01-03 14:24:02,240 - INFO - --> [!] - Unmatched word
+2022-01-03 14:24:02,240 - INFO - --> [!] - Sending response message...
