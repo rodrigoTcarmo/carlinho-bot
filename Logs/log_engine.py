@@ -1,21 +1,22 @@
 import logging
 from logging.handlers import TimedRotatingFileHandler
 
+loggers_dict = {}
+
 
 class LogEngine:
     def __init__(self, name):
-        self.loggers = {}
         self.name = name
 
-    def log(self):
-        if self.loggers.get(self.name):
-            return self.loggers.get(self.name)
+    def log_bot(self):
+        if loggers_dict.get(self.name):
+            return loggers_dict.get(self.name)
 
         else:
-            log = logging.getLogger(self.name)
-            log.setLevel(logging.INFO)
+            log_bot = logging.getLogger(self.name)
+            log_bot.setLevel(logging.INFO)
 
-            formatter = logging.Formatter('%(asctime)s - %(levelname)s - --> %(message)s')
+            formatter = logging.Formatter('%(asctime)s --> %(message)s')
 
             file_handler = TimedRotatingFileHandler(r'Logs\log_data\slack_bot.log', when='midnight', interval=1)
             file_handler.setLevel(logging.DEBUG)
@@ -24,9 +25,9 @@ class LogEngine:
             stream_handler = logging.StreamHandler()
             stream_handler.setFormatter(formatter)
 
-            log.addHandler(file_handler)
-            log.addHandler(stream_handler)
+            log_bot.addHandler(file_handler)
+            log_bot.addHandler(stream_handler)
 
-            self.loggers[self.name] = log
+            loggers_dict[self.name] = log_bot
 
-            return log
+            return log_bot
